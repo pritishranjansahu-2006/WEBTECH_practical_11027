@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Canvas Shapes Demo</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin: 30px; }
+    canvas { border: 2px solid #333; background: #f7f7f9; }
+  </style>
+</head>
+<body>
+  <h2>Simple Drawing with Canvas</h2>
+  <canvas id="myCanvas" width="500" height="300"></canvas>
+
+  <script>
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Filled rectangle
+    ctx.fillStyle = '#4CAF50';
+    ctx.fillRect(20, 20, 120, 80);
+
+    // Stroked rectangle
+    ctx.strokeStyle = '#1E88E5';
+    ctx.lineWidth = 4;
+    ctx.strokeRect(160, 20, 120, 80);
+
+    // Line
+    ctx.beginPath();
+    ctx.moveTo(20, 130);
+    ctx.lineTo(280, 130);
+    ctx.strokeStyle = '#F44336';
+    ctx.lineWidth = 3;
+    ctx.stroke();
+
+    // Filled circle
+    ctx.beginPath();
+    ctx.arc(380, 60, 40, 0, Math.PI * 2);
+    ctx.fillStyle = '#FF9800';
+    ctx.fill();
+
+    // Stroked circle
+    ctx.beginPath();
+    ctx.arc(450, 200, 35, 0, Math.PI * 2);
+    ctx.strokeStyle = '#9C27B0';
+    ctx.lineWidth = 5;
+    ctx.stroke();
+
+    // Triangle (filled)
+    ctx.beginPath();
+    ctx.moveTo(60, 220);
+    ctx.lineTo(140, 220);
+    ctx.lineTo(100, 160);
+    ctx.closePath();
+    ctx.fillStyle = '#00BCD4';
+    ctx.fill();
+
+    // Text
+    ctx.fillStyle = '#000';
+    ctx.font = '16px Arial';
+    ctx.fillText('Canvas Shapes Demo', 180, 280);
+  </script>
+</body>
+</html>

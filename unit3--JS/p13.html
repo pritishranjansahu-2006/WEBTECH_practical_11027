@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Functions and Scope</title>
+</head>
+<body>
+  <h2>User-Defined Functions & Variable Scope</h2>
+  <script>
+    // Function to perform addition
+    function add(x, y) {
+      return x + y;
+    }
+
+    // Function to show scope of var, let, const
+    function showScope() {
+      if (true) {
+        var a = "I am var";     // function-scoped
+        let b = "I am let";     // block-scoped
+        const c = "I am const"; // block-scoped
+
+        document.write("Inside block:<br>");
+        document.write(a + "<br>");
+        document.write(b + "<br>");
+        document.write(c + "<br>");
+      }
+
+      document.write("<br>Outside block:<br>");
+      document.write(a + "<br>"); // Accessible
+      // document.write(b); // Error if uncommented
+      // document.write(c); // Error if uncommented
+    }
+
+    // Invoke functions
+    let result = add(10, 5);
+    document.write("Sum using user-defined function: " + result + "<br><br>");
+
+    showScope();
+  </script>
+</body>
+</html>

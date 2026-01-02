@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validation Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background: #f7f7f9;
+    }
+    form {
+      width: 300px;
+      margin: auto;
+      padding: 20px;
+      border: 2px solid #0077cc;
+      background: #fff;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin: 10px 0;
+    }
+    button {
+      padding: 10px;
+      width: 48%;
+      margin: 5px 1%;
+    }
+  </style>
+</head>
+<body>
+  <h2 align="center">Student Form Validation</h2>
+
+  <form onsubmit="return validateForm()">
+    <label for="name">Name:</label>
+    <input type="text" id="name" oninput="checkName()" placeholder="Enter your name">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" placeholder="Enter your email">
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" placeholder="Enter your age">
+
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+  </form>
+
+  <script>
+    function checkName() {
+      let name = document.getElementById("name").value;
+      if (name.length < 3) {
+        alert("Name must be at least 3 characters long.");
+      }
+    }
+
+    function validateForm() {
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let age = document.getElementById("age").value;
+
+      if (name === "" || email === "" || age === "") {
+        alert("All fields are required.");
+        return false;
+      }
+
+      if (age < 18) {
+        alert("You must be at least 18 years old.");
+        return false;
+      }
+
+      alert("Form submitted successfully!");
+      return true;
+    }
+  </script>
+</body>
+</html>

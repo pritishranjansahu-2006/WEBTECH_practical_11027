@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Arithmetic Operations</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f9;
+      padding: 30px;
+      text-align: center;
+    }
+    input[type="number"] {
+      padding: 8px;
+      margin: 10px;
+      width: 150px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-weight: bold;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h2>Arithmetic Operations Using JavaScript</h2>
+
+  <input type="number" id="num1" placeholder="Enter first number">
+  <input type="number" id="num2" placeholder="Enter second number"><br>
+
+  <button onclick="calculate()">Calculate</button>
+  <button onclick="reset()">Reset</button>
+
+  <div id="result"></div>
+
+  <script>
+    function calculate() {
+      let a = Number(document.getElementById("num1").value);
+      let b = Number(document.getElementById("num2").value);
+
+      let output = `
+        Sum: ${a + b} <br>
+        Subtraction: ${a - b} <br>
+        Multiplication: ${a * b} <br>
+        Division: ${b !== 0 ? (a / b).toFixed(2) : "Cannot divide by zero"} <br>
+        Modulus: ${b !== 0 ? a % b : "Undefined"}
+      `;
+      document.getElementById("result").innerHTML = output;
+    }
+
+    function reset() {
+      document.getElementById("num1").value = "";
+      document.getElementById("num2").value = "";
+      document.getElementById("result").innerHTML = "";
+    }
+  </script>
+</body>
+</html>
